@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<a href="#" id="anchor">Press</a>
+
+
+<div class="content"></div>
+
+@section scripts{
+    <script type="text/javascript">
+        (function () {
+            $('#anchor').on('click', function () {
+
+
+                $.getJSON("/Customer/getJson", function (result) {
+                    $.each(result, function (i, field) {
+                        $("div").append(field.ID + " " + field.Name + " ");
+                    });
+                });
+
+            });
+
+            //alert("hello");
+        }());
+    </script>
+}

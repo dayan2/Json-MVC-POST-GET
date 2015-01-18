@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@*@using (Html.BeginForm())
+{
+
+    @Html.DropDownList("list", ViewData["list"] as List<SelectListItem>)
+
+}*@
+<select id="selectDD">
+    <option value="0">Select</option>
+    <option value="1">Customer</option>
+    <option value="2">User</option>
+</select> 
+
+<button id="button">button</button>
+<div></div>
+
+@section scripts{
+    <script type="text/javascript">
+        (function () {
+                        
+            $('#selectDD').change(function () {
+                $('div').val('');
+                var value = $('#selectDD').val(),
+                    path = null;
+                //alert(value);
+                if (value == 1)
+                    path = "getJsonCustomers";
+                else 
+                    path = "getJsonUsers";
+
+                $.getJSON("/System/" + path, null, function (result) {
+                    $.each(result, function (i, field) {
+                        
+                        $("div").append(field.ID + " " + field.Name + " ");
+
+                    });
+                });
+            });
+        }());
+    </script>
+}
