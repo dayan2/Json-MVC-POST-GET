@@ -18,12 +18,13 @@ namespace Json_In_MVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(Models.User user)
+        public ActionResult Index(string option1)
         {
-            if (user == null)
-                return Json(new { success = false });
-            else
-                return Json(new { success = true});
+            //if (user == null)
+            //    return Json(new { success = false });
+            //else
+            //    return Json(new { success = true});
+            return Json(option1);
         }
 
     }

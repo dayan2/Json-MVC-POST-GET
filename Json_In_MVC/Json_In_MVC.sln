@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Json_GET", "Json_GET\Json_G
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Json_DropDownList_Example", "Json_DropDownList_Example\Json_DropDownList_Example.csproj", "{1C3816D2-293B-40E3-86C2-B1404339111C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_POST_Part2", "MVC-POST-Part2\MVC_POST_Part2.csproj", "{69041C0C-C1B7-424E-9B52-5CE4BC5E45B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1C3816D2-293B-40E3-86C2-B1404339111C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C3816D2-293B-40E3-86C2-B1404339111C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C3816D2-293B-40E3-86C2-B1404339111C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69041C0C-C1B7-424E-9B52-5CE4BC5E45B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69041C0C-C1B7-424E-9B52-5CE4BC5E45B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69041C0C-C1B7-424E-9B52-5CE4BC5E45B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69041C0C-C1B7-424E-9B52-5CE4BC5E45B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

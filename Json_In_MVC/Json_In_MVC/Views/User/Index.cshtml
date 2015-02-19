@@ -5,3 +5,31 @@
 <h2>Index</h2>
 
 <a href="#" id="anchor">Press</a>
+<form id="form1">
+
+    <select name="option1">
+        <option>1</option>
+        <option>2</option>
+    </select>
+
+    <button id="submit1">Sub</button>
+
+</form>
+
+<div id="data1"></div>
+
+
+@section scripts{
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#submit1").click(function () {
+                $.post("/User/Index", $("#form1").serialize())
+                .done(function (data) {
+                    $("#data1").html(data);
+                });
+                return false;
+            });
+        });
+    </script>
+}

@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<form id="form1">
+    <select id="specialityfield" class="form-control formSelect">
+        <option value="0">All</option>
+        <option value="1">Dentists‎</option>
+        <option value="2">Physicians‎ </option>
+        <option value="3">Surgeons‎</option>
+        <option value="4">Radiologists‎</option>
+        <option value="5">Neurologists‎‎</option>
+        <option value="6">Neurosurgeons‎</option>
+    </select>
+
+</form>
+<div id="data1">aa</div>
+
+@section scripts{
+    <script type="text/javascript">
+        
+        $(document).ready(function () {
+            
+
+            $('#specialityfield').change(function () {
+                //var data = ["a", "b", "c", "d"]; //sample
+
+                ////Wrap your data ...
+                //var postData = { choices: data };
+
+                //$.ajax({
+                //    type: "POST",
+                //    url: "/Home/Index", //Your URL here
+                //    data: postData,
+                //    success: function (result) {
+                //        //$("#data1").html(result);
+                //        alert(result);
+                //    },
+                //    dataType: "json",
+                //    traditional: true
+                //});
+                var filter = $('#specialityfield').val();
+                $.post("/Home/Index", { name: filter }, function (data) {
+                    alert(data);
+                });
+            });
+
+
+        });
+
+
+
+        
+    </script>
+}
