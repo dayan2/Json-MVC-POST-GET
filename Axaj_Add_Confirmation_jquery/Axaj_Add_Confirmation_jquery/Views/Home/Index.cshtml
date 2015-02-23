@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Index";
+
+
+}
+<style>
+    .msgBoxx{
+        width:500px;
+    }
+</style>
+<h2>Index</h2>
+
+@using (Html.BeginForm("Index", "Home"))
+{
+    @Html.TextBox("str")
+    <input type="submit" value="Submit" id="submit">
+}
+
+<div id="notificationSuccess" class="alert alert-success msgBoxx" role="alert">
+    <div id="messageSuccess"></div>
+</div>
+<div id="notificationError" class="alert alert-danger" role="alert">
+    <div id="messageError"></div>
+</div>
+
+
+
+@section scripts{
+    <script>
+        $('document').ready(function () {
+            $('#notificationSuccess').hide();
+            $('#notificationError').hide();
+        });
+        $('#submit').click(function () {
+            $.post("../Home/Index", { "filter": "filter" }, function (data) {
+                alert("Data: " + data);
+                if (data == true) {
+                    $('#notificationSuccess').show();
+                    $('#messageSuccess').replaceWith("You have successfully added your record!!");
+                    $('#notificationSuccess').delay(2000).fadeOut(2500);
+
+                }
+                else {
+                    $('#notificationError').show();
+                    $('#messageError').replaceWith("Error!! Some Thing Went Wrong, Please Try Again!!");
+                    $('#notificationError').delay(2000).fadeOut(2500);
+                }
+            });
+            return false;
+        });
+
+
+
+
+
+    </script>
+}

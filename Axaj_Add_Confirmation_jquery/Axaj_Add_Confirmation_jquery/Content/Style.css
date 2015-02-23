@@ -1,0 +1,19 @@
+﻿body {
+}
+
+#notification{
+    width : 100%;
+    position : absolute;
+    top : 0;
+    left : 0;
+    height : 50px;
+    background: #0094ff;
+    opacity: 0.9;
+    display : none;
+}
+
+#message{
+    width: 100%;
+    text-align: center;
+    padding-top: 15px;
+}
